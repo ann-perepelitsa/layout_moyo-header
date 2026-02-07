@@ -1,8 +1,6 @@
 body {
   margin: 0;
   background: #e9e9e9;
-  box-sizing: border-box;
-  font-family: var(--font-family);
 }
 
 :root {
@@ -10,7 +8,7 @@ body {
   --nav-height: 64px;
   --nav-gap: 28px; /* use margins, not gap */
   --text-color: #333;
-  --font-family: 'Roboto', Arial, sans-serif;
+  --font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -24,15 +22,25 @@ body {
 
 /* header wrapper styling (page width) */
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 50px;
+
   background: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  padding: 0; /* full width header, container handles horizontal padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.logo img {
+.logo {
   display: block;
-  width: 40px;
   height: 40px;
+  width: 40px;
+}
+
+.logo__image {
+  height: 100%;
+  width: 100%;
 }
 
 .nav {
@@ -40,15 +48,14 @@ body {
 }
 
 .nav__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .nav__item {
-  margin-left: var(--nav-gap);
+  margin-left: 20px;
 }
 
 .nav__item:first-child {
