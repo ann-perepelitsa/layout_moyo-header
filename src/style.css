@@ -77,7 +77,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -10px;
+  bottom: 10px;
   width: 28%;
   height: 3px;
   background: var(--moyo-blue);
