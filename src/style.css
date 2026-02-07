@@ -54,9 +54,9 @@ body {
   font-family: Roboto, sans-serif;
   font-size: 12px;
   font-weight: 500;
+  text-decoration: none;
   color: #000;
   text-transform: uppercase;
-  text-decoration: none;
   white-space: nowrap;
 
   transition: color 0.3s;
@@ -71,6 +71,7 @@ body {
 }
 
 .nav__link.is-active::after {
+  content: '';
   position: absolute;
   right: 0;
   bottom: 0;
@@ -80,6 +81,4 @@ body {
   border-radius: 2px;
 
   background-color: var(--moyo-blue);
-
-  content: '';
 }
