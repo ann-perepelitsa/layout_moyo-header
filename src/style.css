@@ -2,10 +2,11 @@ body {
   margin: 0;
   background: #e9e9e9;
   box-sizing: border-box;
+  font-family: var(--font-family);
 }
 
 :root {
-  --moyo-blue: #0072c6;
+  --moyo-blue: #00acdc;
   --nav-height: 64px;
   --nav-gap: 28px; /* use margins, not gap */
   --text-color: #333;
@@ -13,19 +14,25 @@ body {
 }
 
 .container {
-  max-width: 1024px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center; /* vertical centering */
   justify-content: flex-start;
-  padding: 0 20px;
+  padding: 0 16px;
+}
+
+/* header wrapper styling (page width) */
+.header {
   background: #fff;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0; /* full width header, container handles horizontal padding */
 }
 
 .logo img {
   display: block;
-  height: 36px;
+  width: 40px;
+  height: 40px;
 }
 
 .nav {
@@ -41,26 +48,26 @@ body {
 }
 
 .nav__item {
-  margin-right: var(--nav-gap);
+  margin-left: var(--nav-gap);
 }
 
-.nav__item:last-child {
-  margin-right: 0;
+.nav__item:first-child {
+  margin-left: 0;
 }
 
 .nav__link {
   text-decoration: none;
-  color: var(--text-color);
-  font-family: var(--font-family);
+  color: #000;
+  font-family: Roboto, Arial, sans-serif;
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 0.02em;
-  height: var(--nav-height); /* header height set in one place (for links) */
+  font-size: 12px;
+  height: var(--nav-height);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative; /* for ::after */
+  white-space: nowrap;
 }
 
 .nav__link:hover {
@@ -75,13 +82,24 @@ body {
 .nav__link.is-active::after {
   content: '';
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 10px;
-  width: 28%;
-  height: 3px;
-  background: var(--moyo-blue);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
   border-radius: 2px;
+  background-color: var(--moyo-blue);
+}
+
+/* show underline on hover for the hovered link (Backstop hover scenario) */
+.nav__link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--moyo-blue);
 }
 
 /* Accessibility / small screens */
