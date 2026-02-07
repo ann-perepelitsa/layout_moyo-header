@@ -28,11 +28,11 @@ body {
   height: 36px;
 }
 
-nav {
+.nav {
   margin-left: 24px;
 }
 
-nav ul {
+.nav__list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -40,15 +40,15 @@ nav ul {
   align-items: center;
 }
 
-nav li {
+.nav__item {
   margin-right: var(--nav-gap);
 }
 
-nav li:last-child {
+.nav__item:last-child {
   margin-right: 0;
 }
 
-nav a {
+.nav__link {
   text-decoration: none;
   color: var(--text-color);
   font-family: var(--font-family);
@@ -63,16 +63,16 @@ nav a {
   position: relative; /* for ::after */
 }
 
-nav a:hover {
+.nav__link:hover {
   color: var(--moyo-blue);
 }
 
-nav a.is-active {
+.nav__link.is-active {
   color: var(--moyo-blue);
 }
 
 /* blue underline for active link using pseudo element */
-nav a.is-active::after {
+.nav__link.is-active::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -89,10 +89,10 @@ nav a.is-active::after {
   .container {
     padding: 12px;
   }
-  nav {
+  .nav {
     margin-left: 16px;
   }
-  nav a {
+  .nav__link {
     font-size: 13px;
   }
 }
